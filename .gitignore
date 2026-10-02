@@ -19,8 +19,6 @@
 .vscode/
 
 # Python scripts and cache
-*.py
-muse/
 __pycache__/
 *.pyc
 

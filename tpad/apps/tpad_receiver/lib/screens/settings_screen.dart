@@ -17,16 +17,16 @@ class SettingsScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TPadSpacing.md),
           children: [
             const TPadSectionHeader('Network'),
-            ListTile(
-              title: const Text('TCP port'),
+            const ListTile(
+              title: Text('TCP port'),
               subtitle:
                   Text('$kTcpPort (TLS lands in P1-B4)'),
-              leading: const Icon(Icons.security),
+              leading: Icon(Icons.security),
             ),
-            ListTile(
-              title: const Text('UDP port'),
+            const ListTile(
+              title: Text('UDP port'),
               subtitle: Text('$kUdpPort'),
-              leading: const Icon(Icons.speed),
+              leading: Icon(Icons.speed),
             ),
             SwitchListTile(
               title: const Text('Listeners running'),

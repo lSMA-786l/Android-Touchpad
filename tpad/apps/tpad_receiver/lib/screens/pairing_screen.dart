@@ -20,7 +20,7 @@ class PairingScreen extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Scan with the TPad phone app',
+                const Text('Scan with the TPad phone app',
                     style: TPadText.heading),
                 const SizedBox(height: TPadSpacing.md),
                 // White card behind the QR: scanners need contrast.
