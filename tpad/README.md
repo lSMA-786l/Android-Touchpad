@@ -50,7 +50,7 @@ Explicitly out of scope: app launcher, clipboard sync, Wake-on-LAN
 | Batch | Status | Contents |
 |---|---|---|
 | P1-B1 | DELIVERED | Protocol spec + shared Dart codec + project docs |
-| P1-B2 | planned | Windows scaffold: tray app, QR pairing screen, listeners |
+| P1-B2 | DELIVERED | Windows scaffold: tray app, QR pairing screen, listeners |
 | P1-B3 | planned | Windows input engine: SendInput pipeline, smoothing |
 | P1-B4 | planned | Security: TLS, tokens, replay window, HMAC, approve/kick |
 | P1-B5 | planned | Android scaffold: QR scan pairing, connection state |
