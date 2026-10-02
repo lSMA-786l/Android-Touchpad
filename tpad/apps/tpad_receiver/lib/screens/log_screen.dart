@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tpad_theme/tpad_theme.dart';
 
 import '../app.dart';
 
@@ -16,23 +17,28 @@ class LogScreen extends StatelessWidget {
           children: [
             Expanded(
               child: lines.isEmpty
-                  ? const Center(child: Text('No events yet.'))
+                  ? Center(
+                      child: Text('No events yet.',
+                          style: TPadText.caption.copyWith(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurfaceVariant)))
                   : ListView.builder(
-                      padding: const EdgeInsets.all(12),
+                      padding:
+                          const EdgeInsets.all(TPadSpacing.sm),
                       itemCount: lines.length,
-                      itemBuilder: (context, i) => SelectableText(
-                        lines[i],
-                        style: const TextStyle(
-                            fontFamily: 'monospace', fontSize: 12),
-                      ),
+                      itemBuilder: (context, i) =>
+                          TPadLogLine(lines[i]),
                     ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8),
-              child: TextButton.icon(
+              padding: const EdgeInsets.all(TPadSpacing.xs),
+              child: TPadButton(
+                label: 'Clear',
+                icon: Icons.delete_outline,
+                type: TPadButtonType.ghost,
+                size: TPadButtonSize.sm,
                 onPressed: log.clear,
-                icon: const Icon(Icons.delete_outline),
-                label: const Text('Clear'),
               ),
             ),
           ],

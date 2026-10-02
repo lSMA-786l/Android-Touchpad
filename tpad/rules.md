@@ -48,6 +48,8 @@ multi-monitor picker, per-app volume mixer.
 - `tpad_protocol` stays pure Dart — no Flutter imports. Both apps import
   it; never duplicate packet/message code.
 - Minimal diffs. Do not reformat unrelated code.
+- UI: tokens only — zero raw hex/colors in widgets. Primitives live in
+  tpad_theme; widgets reference semantic tokens (see tpad_theme/README.md).
 - Every network boundary validates: magic, version, HMAC, seq, ts,
   frame size (max 4 MiB). Malformed input is dropped, never crashes.
 - Handle disconnects and reconnects gracefully on both sides.

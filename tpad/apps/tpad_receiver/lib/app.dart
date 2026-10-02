@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:tpad_theme/tpad_theme.dart';
 
 import 'screens/devices_screen.dart';
 import 'screens/log_screen.dart';
@@ -41,13 +42,7 @@ class _TPadAppState extends State<TPadApp> {
     return MaterialApp(
       title: 'TPad Receiver',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          brightness: Brightness.dark,
-        ),
-        useMaterial3: true,
-      ),
+      theme: TPadTheme.dark(),
       home: Scaffold(
         appBar: AppBar(title: const Text('TPad Receiver')),
         body: IndexedStack(

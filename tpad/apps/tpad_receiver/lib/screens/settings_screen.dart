@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tpad_protocol/tpad_protocol.dart';
+import 'package:tpad_theme/tpad_theme.dart';
 
 import '../app.dart';
 
@@ -13,12 +14,14 @@ class SettingsScreen extends StatelessWidget {
       listenable: net,
       builder: (context, _) {
         return ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(TPadSpacing.md),
           children: [
-            const ListTile(
-              title: Text('TCP port'),
-              subtitle: Text('47900 (TLS lands in P1-B4)'),
-              leading: Icon(Icons.security),
+            const TPadSectionHeader('Network'),
+            ListTile(
+              title: const Text('TCP port'),
+              subtitle:
+                  Text('$kTcpPort (TLS lands in P1-B4)'),
+              leading: const Icon(Icons.security),
             ),
             ListTile(
               title: const Text('UDP port'),
@@ -31,9 +34,11 @@ class SettingsScreen extends StatelessWidget {
               onChanged: (v) => v ? net.start() : net.stop(),
             ),
             const Divider(),
+            const TPadSectionHeader('System'),
             const ListTile(
               title: Text('Start with Windows'),
-              subtitle: Text('Arrives in a later batch (registry entry).'),
+              subtitle:
+                  Text('Arrives in a later batch (registry entry).'),
               leading: Icon(Icons.power_settings_new),
             ),
           ],

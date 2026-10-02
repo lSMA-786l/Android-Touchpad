@@ -18,7 +18,9 @@
 *.iml
 .vscode/
 
-# Python cache
+# Python scripts and cache
+*.py
+muse/
 __pycache__/
 *.pyc
 
